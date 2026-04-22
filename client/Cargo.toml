@@ -1,6 +1,6 @@
 [package]
 name = "corepc-client"
-version = "0.12.0"
+version = "0.12.1"
 authors = ["Tobin C. Harding <me@tobin.cc>", "Jamil Lambert <Jamil.Lambert@proton.me>"]
 license = "CC0-1.0"
 repository = "https://github.com/rust-bitcoin/corepc"
@@ -25,12 +25,14 @@ allowed_duplicates = ["base64"]
 client-sync = ["jsonrpc"]
 
 [dependencies]
-bitcoin = { version = "0.32.0", default-features = false, features = ["std", "serde"] }
+bitcoin = { version = "0.33.0-beta", default-features = false, features = ["std", "serde"] }
 log = "0.4"
 serde = { version = "1.0.103", default-features = false, features = [ "derive", "alloc" ] }
 serde_json = { version = "1.0.117" }
 types = { package = "corepc-types", version = "0.12.0", path = "../types", default-features = false, features = ["std"] }
 
-jsonrpc = { version = "0.19.0", path = "../jsonrpc", features = ["bitreq_http"], optional = true }
+# jsonrpc = { version = "0.19.0", path = "../jsonrpc", features = ["bitreq_http"], optional = true }
+# Using the crate version on purpose because of the dependency hacks in functionary
+jsonrpc = { version = "0.19.0", features = ["bitreq_http"], optional = true }
 
 [dev-dependencies]

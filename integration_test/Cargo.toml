@@ -61,7 +61,7 @@ v17 = ["v18_and_below"]
 TODO = []                       # This is a dirty hack while writing the tests.
 
 [dependencies]
-bitcoin = { version = "0.32.0", default-features = false, features = ["std", "serde"] }
+bitcoin = { version = "0.33.0-beta", default-features = false, features = ["std", "serde"] }
 env_logger = "0.9.0"
 bitcoind = { package = "bitcoind", version = "0.37.0", path = "../bitcoind", default-features = false }
 rand = "0.8.5"
