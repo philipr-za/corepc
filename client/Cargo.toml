@@ -21,7 +21,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 client-sync = ["jsonrpc"]
 
 [dependencies]
-bitcoin = { git = "https://github.com/Blockstream/rust-bitcoin.git", branch = "use-secp256k1-0.32.0-beta.2", default-features = false, features = ["std", "serde"] }
+bitcoin = { git = "https://github.com/philipr-za/rust-bitcoin.git", branch = "use-secp256k1-0.32.0.beta.2-on-0.32.102", default-features = false, features = ["std", "serde"] }
 log = "0.4"
 serde = { version = "1.0.103", default-features = false, features = [ "derive", "alloc" ] }
 serde_json = { version = "1.0.117" }
