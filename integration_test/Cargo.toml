@@ -66,7 +66,7 @@ env_logger = "0.9.0"
 node = { package = "corepc-node", version = "0.12.0", path = "../node", default-features = false }
 rand = "0.8.5"
 # Just so we can enable the feature.
-types = { package = "corepc-types", version = "0.12.0", path = "../types", features = ["serde-deny-unknown-fields"] }
+types = { package = "corepc-types", version = "0.12.100", path = "../types", features = ["serde-deny-unknown-fields"] }
 
 [dev-dependencies]
 
