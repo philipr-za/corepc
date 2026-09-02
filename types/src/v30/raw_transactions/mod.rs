@@ -268,9 +268,11 @@ pub mod taproot {
 
         let bytes = Vec::from_hex(sig).map_err(E::Hex)?;
         let (sighash_byte, signature) = bytes.split_last().ok_or(E::EmptySignature)?;
+        let signature: [u8; 64] = signature
+            .try_into()
+            .map_err(|_| E::Secp256k1(secp256k1::Error::InvalidSignature))?;
         Ok(Signature {
-            signature: secp256k1::schnorr::Signature::from_slice(signature)
-                .map_err(E::Secp256k1)?,
+            signature: secp256k1::schnorr::Signature::from_byte_array(signature),
             sighash_type: TapSighashType::from_consensus_u8(*sighash_byte)
                 .map_err(E::SighashType)?,
         })

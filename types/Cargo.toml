@@ -18,7 +18,7 @@ std = ["bitcoin/std"]
 serde-deny-unknown-fields = []
 
 [dependencies]
-bitcoin = { version = "0.32.0", default-features = false, features = ["serde", "base64", "secp-recovery"] }
+bitcoin = { git = "https://github.com/philipr-za/rust-bitcoin.git", branch = "use-secp256k1-0.33.1", default-features = false, features = ["serde", "base64", "secp-recovery"] }
 serde = { version = "1.0.103", default-features = false, features = [ "derive", "alloc" ] }
 serde_json = { version = "1.0.117" }
 
